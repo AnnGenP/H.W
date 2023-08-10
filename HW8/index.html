@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Recursive exponentiation</title>
+</head>
+
+<body>
+    <script>
+        function pow(num, degree) {
+            if (degree === 0) {
+                return 1;
+            } else if (degree > 0) {
+                return num * pow(num, degree - 1);
+            } else {
+                return 1 / (num * pow(num, -degree - 1));
+            }
+        }
+
+        const base = +prompt("What's your number?")
+        const exponent = +prompt("What is your degree?")
+        const result = pow(base, exponent);
+
+        console.log(`${base} в степени ${exponent} = ${result}`);
+
+
+    </script>
+</body>
